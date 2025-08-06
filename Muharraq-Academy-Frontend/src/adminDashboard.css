@@ -1,0 +1,222 @@
+.dashboard-container {
+    display: block; 
+    height: 100vh;
+  }
+  
+  .dashboard-content {
+    margin-left: 250px; 
+    padding: 2rem;
+    background-color: #fff;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background-color: #B7905F;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  /* AdminSidebar.css */
+  .admin-sidebar {
+    width: 250px;
+    background-color: #87383B;
+    color: white;
+    padding: 1.5rem;
+    height: 100vh;
+  }
+  
+  .sidebar-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-links li {
+    margin: 1rem 0;
+  }
+  
+  .sidebar-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .sidebar-links a:hover {
+    text-decoration: underline;
+  }
+  
+
+  .admin-sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #87383B; /* تيرشيري */
+    padding: 2rem 1.5rem;
+    color: white;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .sidebar-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-links li {
+    margin-bottom: 1.2rem;
+  }
+  
+  .sidebar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar-links a:hover {
+    background-color: #B7905F; /* سكندري */
+    color: #fff;
+  }
+  
+  .sidebar-links a.active {
+    background-color: #B7905F;
+    font-weight: bold;
+  }
+  
+
+
+  .managePack-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start;
+    padding: 2rem;
+    background-color: #f2e6e4;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  .managePack-container h1,
+  .managePack-container h2 {
+    color: #87383B;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .managePack-container button {
+    background-color: #B7905F;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0.5rem 0.5rem 1rem 0;
+  }
+  .top-actions {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .managePack-container button:hover {
+    background-color: #a67b4a;
+  }
+  
+  .package-table {
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .package-table th,
+  .package-table td {
+    border: 1px solid #ddd;
+    padding: 12px 16px;
+    text-align: left;
+  }
+  
+  .package-table th {
+    background-color: #87383B;
+    color: white;
+  }
+  
+  .package-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .package-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    background-color: #fefefe;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+  }
+  
+  .form label {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #3a1f24;
+  }
+  
+  .form input,
+  .form textarea {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .form button {
+    width: fit-content;
+    margin-top: 1.5rem;
+  }
+  

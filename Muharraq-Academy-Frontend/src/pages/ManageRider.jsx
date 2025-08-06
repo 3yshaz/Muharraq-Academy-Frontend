@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 const ManageRiders = () => {
+
     const [riders, setRiders] = useState([])
     const navigate = useNavigate()
 
@@ -13,7 +14,7 @@ const ManageRiders = () => {
         const fetchRiders = async () => {
         try {
             const response = await axios.get('http://localhost:3000/api/auth', {
-                headers: { Authorization: `Beearer ${token}`}
+                headers: { Authorization: `Bearer ${token}`}
 
             })
 
@@ -34,7 +35,7 @@ const ManageRiders = () => {
                 headers: { Authorization: `Bearer ${token}`}
             })
 
-            setRiders(riders.filter(rider => rider._id !== id))
+            setRiders(riders.filter(rider => rider.userId !== id))
         } catch (error) {
             console.error('Error deleting rider:', error)
             alert('Failed to delete rider')
@@ -45,7 +46,10 @@ const ManageRiders = () => {
         navigate(`/admin/riders/edit/${id}`)
     }
 
-    return 
+    return (
+        <>
+        <AdminNavbar />
+
     <div className='dashboard-container'>
         <h1>Manage Riders</h1>
         <table>
@@ -59,20 +63,22 @@ const ManageRiders = () => {
             </thead>
             <tbody>
                 {riders.map(rider => (
-                    <tr key={rider._id}>
+                    <tr key={rider.userId}>
                         <td>{rider.name}</td>
                         <td>{rider.email}</td>
                         <td>{rider.phone || '-'}</td>
                         <td>
-                            <button onClick={() => handleEdit(rider._id)}>Edit</button>
-                            <button onClick={() => handleDelete(rider._id)} style ={{marginLeft:'8px', color:'red'}}>Delete</button>
+                            <button onClick={() => handleEdit(rider.userId)}>Edit</button>
+                            <button onClick={() => handleDelete(rider.userId)} style ={{marginLeft:'8px', color:'red'}}>Delete</button>
                         </td>
                     </tr>
                 ))}
             </tbody>
         </table>
     </div>
-
+    </>
+    )
 }
+
 
 export default ManageRiders

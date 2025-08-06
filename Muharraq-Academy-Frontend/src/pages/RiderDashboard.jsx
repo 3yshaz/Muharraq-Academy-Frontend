@@ -1,22 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import '../Styles.css'
+import '../riderDashboard.css'
 import axios from 'axios'
 
 const RiderDashboard = () => {
     const navigate = useNavigate()
     const [userRole, setUserRole] = useState('')
     const [packages, setPackages] = useState([])
+    const [riderName, setRiderName ] = useState('')
 
 
     useEffect(() => {
+
         const token = localStorage.getItem('token')
         const role = localStorage.getItem('role')
+        const user = localStorage.getItem('user')
 
-        if (!token || role !== 'rider') {
+        if (!token || role !== 'rider' || !user) {
             navigate('/login')
         } else {
             setUserRole(role)
+            setUserRole(JSON.parse(user))
+            setRiderName(JSON.parse(user).name)
             fetchPackages()
         }
 
@@ -38,14 +43,22 @@ const RiderDashboard = () => {
 
     const handleBookPackage = async (packageId) => {
         try {
+           
             const token = localStorage.getItem('token')
-            await axios.post(
+            const user = JSON.parse(localStorage.getItem('user'))
+
+
+            await axios.post (
                 `http://localhost:3000/api/packages/${packageId}/book`,
-                {}, 
+            {
+                riderId: user._id,
+                packageId: packageId
+            },
+
                 {headers: { Authorization: `Bearer ${token}`}}
             )
             alert('Package booked successfully!')
-            navigate('/rider-package')
+            navigate('/rider-package', { state: { packageId}})
         } catch (error) {
             console.error('Booking failed:', error)
             alert('Failed to book package')
@@ -56,25 +69,33 @@ const RiderDashboard = () => {
         localStorage.removeItem('token')
         localStorage.removeItem('role')
         localStorage.removeItem('userId')
-        navigate('/login')
+        navigate('/')
     }
 
   return (
 
-    <div className="dashboard-container">
-        <div className="dashboard-card">
-            <h1>Welcome, Rider!</h1>
+    <div className="rider-dashboard">
+        
+    
+        <div className="sidebar">
+            <h2>Welcome Rider</h2>
+            <ul>
+                <li onClick={() => navigate('/rider-profile')}>My Profile</li>
+                <li onClick={() => navigate('/rider-attendance')}>Attendance</li>
+                <li onClick={() => navigate('/rider-horses')}>Assigned Horses</li>
+                <li onClick={() => navigate('/rider-package')}>My Package</li>
+                <li onClick={handleLogout} className='logout'>Logout</li>
+            </ul>
+            </div>
+            <div className='academy-info'>
+            <img src='/images/Logo.jpg' alt='Academy Logo' className='academy-logo'/>
+            <p className='academy-name'>Muharraq Equestrian Academy</p>
+            </div>
+
+
+            <div className='main-content'>
+            <h1>Welcome, <span className='rider-name'>{riderName}</span> !</h1>
             <p>This is your dashboard. Here you can view your lessons, attendance, horses, and more.</p>
-
-            <div className= "dashboard-links">
-                <button onClick={() => navigate('/rider-profile')}>My Profile</button>
-                <button onClick={() => navigate('/rider-attendance')}>Attendance</button>
-                <button onClick={() => navigate('/rider-horses')}>Assigned Horses</button>
-                <button onClick={() => navigate('/rider-package')}>My Package</button>
-            </div>
-
-            <button onClick={handleLogout} className= "logout-button">Logout</button>
-            </div>
 
             {/* ✨Packages Section✨ */}
             <div className='packages-section'>
@@ -86,21 +107,22 @@ const RiderDashboard = () => {
                 <div className='packages-grid'>
                     {packages.map((pkg) => (
                         <div key={pkg._id} className='package-card'> 
+                        <img src={pkg.imageUrl} alt={pkg.name} className='package-img' />
                         <h3>{pkg.name} </h3>
                         <p>{pkg.description}</p>
-                        <p>{pkg.sessionsPerMonth}</p>
+                        <p>Sessions: {pkg.sessionsPerMonth}</p>
                         <p>Price: {pkg.price} BD</p>
                         <button onClick={() => handleBookPackage(pkg._id)}>Book Now</button>
                         </div>
-
                     ))}
                 </div>
                 )}
             </div>
         </div>  
-);
+    </div>
+)
   
-};
+}
 
 export default RiderDashboard;
 

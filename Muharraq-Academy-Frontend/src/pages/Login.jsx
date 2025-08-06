@@ -22,11 +22,12 @@ const Login = () => {
         password: password,
       })
 
-      const { token, role } = response.data
+      const { token, role, user } = response.data
 
 
       localStorage.setItem('token', token)
       localStorage.setItem('role', role);
+      localStorage.setItem('user', JSON.stringify(user))
 
 
       if (role === 'admin') {
@@ -39,16 +40,20 @@ const Login = () => {
     
 } catch (err)  {
         console.error(err.response?.data || err.message)
-        if (err.response && err.response.data && err.response.data.message) {
-            setError(err.response.data.message)
-        } else {
-            setError('An error occurred. Please try again.')
-        }
+
+            setError(err.response.data.message || 'An error occurred. Please try again.')
+
     }
 }
 
   return (
     <div className="login-container">
+
+        <div className='login-logo-container'>
+          <img src='/images/Logo.jpg' alt='Academy Logo' className='login-logo'/>
+          <p className='login-logo-name'>Muharraq Equestrian Academy</p>
+
+        </div>
       <form className="login-form" onSubmit={handleLogin}>
         <h2>Login</h2>
         {error && <p style={{ color: 'red' }}>{error}</p>}
