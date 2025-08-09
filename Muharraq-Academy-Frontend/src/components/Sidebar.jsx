@@ -6,10 +6,13 @@ const AdminSidebar = () => {
 
   const links = [
     { to: '/admin/dashboard', label: 'Dashboard' },
-    { to: '/admin/riders', label: 'Riders Management' },
-    { to: '/admin/horses', label: 'Horses Management' },
-    { to: '/admin/packages', label: 'Packages Management' },
-    { to: '/admin/attendance', label: 'Attendance Records' },
+    { to: '/admin/manage-riders', label: 'Manage Riders' },
+    { to: '/admin/manage-packages', label: 'Manage Packages' },
+    { to: '/admin/manage-bookings', label: 'Manage Bookings' },
+    { to: '/admin/manage-attendance', label: 'Manage Attendance' },
+    { to: '/admin/manage-horses', label: 'Manage Horses' },
+    { to: '/admin/manage-trainers', label: 'Manage Trainers' },
+
   ];
 
   return (
@@ -17,12 +20,11 @@ const AdminSidebar = () => {
 
       <h2 className="sidebar-title">Admin Panel</h2>
       <ul className='sidebar-links'>
-        <li><Link to= '/admin/dashboard'>Dashboard</Link></li>
-        <li><Link to= '/admin/manage-riders'>Manage Riders</Link></li>
-        <li><Link to= '/admin/manage-packages'>Manage Packages</Link></li>
-        <li><Link to= '/admin/manage-attendance'>Manage Attendance</Link></li>
-        <li><Link to= '/admin/manage-horses'>Manage Horses</Link></li>
-        <li><Link to= '/admin/manage-trainers'>Manage Trainers</Link></li>
+        {links.map(link => (
+          <li key={link.to}>
+            <Link to={link.to}>{link.label}</Link>
+          </li>
+        ))}
       </ul>
      
       </div>

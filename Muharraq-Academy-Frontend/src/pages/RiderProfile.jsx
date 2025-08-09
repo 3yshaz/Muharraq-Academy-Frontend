@@ -1,6 +1,8 @@
 import React, { useEffect, useState} from "react"
 import axios from 'axios'
 import '../riderDashboard.css'
+import Footer from '../components/Footer'
+
 import defaultUser from '../images/defaultUser.jpg'
 
 
@@ -94,6 +96,7 @@ const RiderProfile = () => {
                 )}
             </div>
             </div>
+            <Footer/>
     </div>
         
     )

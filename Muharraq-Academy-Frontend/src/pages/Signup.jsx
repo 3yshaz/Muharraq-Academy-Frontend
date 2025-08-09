@@ -1,6 +1,7 @@
 import '../Styles.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import Footer from '../components/Footer'
 import axios from 'axios';
 
 const Signup = () => {
@@ -122,6 +123,7 @@ const Signup = () => {
           Already have an account? <Link to="/">Login</Link>
         </p>
       </form>
+      <Footer/>
     </div>
   );
 };

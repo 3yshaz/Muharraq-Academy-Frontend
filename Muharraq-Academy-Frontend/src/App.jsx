@@ -11,6 +11,8 @@ import RiderHorses from './pages/RiderHorses'
 import RiderAttendance from './pages/RiderAttendance'
 import ManagePackages from './pages/ManagePackages'
 import AdminAttendance from './pages/AdminAttendance'
+import ManageHorses from './pages/ManageHorses'
+import ManageBooking from './pages/ManageBooking'
 
 const App = () => {
   return ( 
@@ -27,6 +29,10 @@ const App = () => {
       <Route path= '/rider-attendance' element={<RiderAttendance />} />
       <Route path= '/admin/manage-packages' element={<ManagePackages/>}/>
       <Route path= '/admin/manage-attendance' element={<AdminAttendance/>}/>
+      <Route path= '/admin/manage-horses' element={<ManageHorses/>}/>
+      <Route path= '/admin/manage-bookings' element={<ManageBooking/>}/>
+
+
 
     </Routes>
 

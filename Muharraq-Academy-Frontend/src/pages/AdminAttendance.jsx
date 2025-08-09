@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from "react"
 import axios from "axios"
+import Footer from '../components/Footer'
+
 
 const AdminRiderAttendance = () =>{
     const [riders, setRiders] = useState([])
@@ -42,13 +44,13 @@ const AdminRiderAttendance = () =>{
         try {
             const token = localStorage.getItem('token')
 
-            const response = await axios.post(`/api/attendance/mark-admin`, {
+            const response = await axios.post('http://localhost:3000/api/attendance', {
                 riderId: selectedRider,
                 horseId: selectedHorse
             }, { headers: {Authorization: `Bearer ${token}`}})
             alert('Attendance marked successfully')
         } catch (error) {
-            console.error('error marking attendance', error)
+            console.error('error marking attendance', error.message)
             alert('failed to mark attendance')
             
         }
@@ -89,6 +91,7 @@ const AdminRiderAttendance = () =>{
                 </div>
                 <button type='submit'> Mark Attendance</button>
             </form>
+            <Footer />
         </div>
     )
 }

@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import '../Styles.css'
+import '../Footer.css'
 import axios from 'axios' 
+import Footer from '../components/Footer'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -41,7 +43,7 @@ const Login = () => {
 } catch (err)  {
         console.error(err.response?.data || err.message)
 
-            setError(err.response.data.message || 'An error occurred. Please try again.')
+        setError(err.response.data.message || 'An error occurred. Please try again.')
 
     }
 }
@@ -76,6 +78,7 @@ const Login = () => {
           Don't have an account? <Link to="/signup">Sign up</Link>
         </p>
       </form>
+      <Footer/>
     </div>
   );
 };

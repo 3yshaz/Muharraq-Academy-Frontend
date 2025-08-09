@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import '../adminDashboard.css';
+import Footer from '../components/Footer'
+
 
 
 const ManagePackages = () => {
@@ -171,6 +173,7 @@ const ManagePackages = () => {
           </form>
           </>
         )}
+        <Footer/>
         </div>
     )
 }

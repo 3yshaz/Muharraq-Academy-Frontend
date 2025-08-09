@@ -1,5 +1,7 @@
 import React, { useEffect, useState} from "react"
 import axios from 'axios'
+import Footer from '../components/Footer'
+
 
 
 const RiderAttendance = () => {
@@ -49,7 +51,7 @@ const RiderAttendance = () => {
       <h2>Your Attendance</h2>
 
       {sessionLeft !== null && (
-        <p><strong>Sessions Left:</strong> {sessionsLeft}</p>
+        <p><strong>Sessions Left:</strong> {sessionLeft}</p>
       )}
       {attendance.length > 0 ? (
         <ul>
@@ -63,6 +65,7 @@ const RiderAttendance = () => {
       ) : (
         <p>No attendance records yet.</p>
       )}
+      <Footer/>
     </div>
   )
 }

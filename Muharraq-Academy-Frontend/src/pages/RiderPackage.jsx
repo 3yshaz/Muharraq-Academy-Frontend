@@ -1,5 +1,7 @@
 import React, { useEffect, useState} from "react"
 import axios from 'axios'
+import Footer from '../components/Footer'
+
 
 
 
@@ -11,7 +13,10 @@ const RiderPackage = () => {
         const fetchBookedPackage = async () => {
             try {
                 const token = localStorage.getItem('token')
-                const response = await axios.get('http://localhost:3000/api/packages/my/booking', {
+                const user = JSON.parse(localStorage.getItem('user'))
+                if (!user) return
+                const userId = user._id
+                const response = await axios.get(`http://localhost:3000/api/packages/rider-package/${userId}`, {
                     headers: { Authorization: `Bearer ${token}`}
                 })
                 console.log('packages:', response.data)
@@ -42,6 +47,7 @@ const RiderPackage = () => {
             ))}
           </div>
         )}
+        <Footer/>
       </div>
     
     )

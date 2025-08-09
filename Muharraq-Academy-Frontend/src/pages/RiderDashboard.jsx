@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../riderDashboard.css'
+import Footer from '../components/Footer'
 import axios from 'axios'
 
 const RiderDashboard = () => {
     const navigate = useNavigate()
     const [userRole, setUserRole] = useState('')
+    const [userData, setUserData ] = useState('')
     const [packages, setPackages] = useState([])
-    const [riderName, setRiderName ] = useState('')
+    const [bookings, setBookings] = useState([])
 
 
     useEffect(() => {
@@ -18,20 +20,22 @@ const RiderDashboard = () => {
 
         if (!token || role !== 'rider' || !user) {
             navigate('/login')
+            return
         } else {
             setUserRole(role)
-            setUserRole(JSON.parse(user))
-            setRiderName(JSON.parse(user).name)
-            fetchPackages()
+            setUserData(JSON.parse(user))
+
+            fetchPackages(token)
+            fetchUserBookings(token)
         }
 
     }, [navigate])
 
-    const fetchPackages = async () => {
+    const fetchPackages = async (token) => {
         try {
             const response = await axios.get('http://localhost:3000/api/packages', {
                 headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                    Authorization: `Bearer ${token}`
                 }
             })
             setPackages(response.data)
@@ -41,26 +45,46 @@ const RiderDashboard = () => {
         }
     }
 
+    const fetchUserBookings = async (token) => {
+        try {
+            const response = await axios.get('http://localhost:3000/api/booking/my/booking', {
+                headers: {Authorization: `Bearer ${token}`}
+            })
+            setBookings(response.data)
+        } catch (error) {
+            console.error('Failed to fetch booked package:', error.response?.data || error.message)
+            
+        }
+    }
+
     const handleBookPackage = async (packageId) => {
+        if (!userData) return
+
+
+        const hasBooked = bookings.some(
+            (booking) => booking.package && booking.package._id === packageId && booking.status !== 'expired'
+        )
+
+        if (hasBooked ) {
+            alert('You have already booked this package.')
+            return
+        }
+
         try {
            
             const token = localStorage.getItem('token')
-            const user = JSON.parse(localStorage.getItem('user'))
+            // const user = JSON.parse(localStorage.getItem('user'))
 
-
-            await axios.post (
-                `http://localhost:3000/api/packages/${packageId}/book`,
-            {
-                riderId: user._id,
-                packageId: packageId
-            },
-
-                {headers: { Authorization: `Bearer ${token}`}}
+            await axios.post(
+                `http://localhost:3000/api/booking/book`,
+            { packageId },
+            {headers: { Authorization: `Bearer ${token}`}}
             )
             alert('Package booked successfully!')
-            navigate('/rider-package', { state: { packageId}})
+            fetchUserBookings(userData._id, token)
+            // navigate('/rider-package', { state: { packageId}})
         } catch (error) {
-            console.error('Booking failed:', error)
+            console.error('Booking failed:', error.response?.data || error.message)
             alert('Failed to book package')
         }
     }
@@ -68,7 +92,7 @@ const RiderDashboard = () => {
     const handleLogout = () => {
         localStorage.removeItem('token')
         localStorage.removeItem('role')
-        localStorage.removeItem('userId')
+        localStorage.removeItem('user')
         navigate('/')
     }
 
@@ -78,7 +102,7 @@ const RiderDashboard = () => {
         
     
         <div className="sidebar">
-            <h2>Welcome Rider</h2>
+            <h2>Rider Panel</h2>
             <ul>
                 <li onClick={() => navigate('/rider-profile')}>My Profile</li>
                 <li onClick={() => navigate('/rider-attendance')}>Attendance</li>
@@ -94,10 +118,9 @@ const RiderDashboard = () => {
 
 
             <div className='main-content'>
-            <h1>Welcome, <span className='rider-name'>{riderName}</span> !</h1>
+            <h1>Welcome, <span className='rider-name'>{userData?.name || ''}</span> !</h1>
             <p>This is your dashboard. Here you can view your lessons, attendance, horses, and more.</p>
 
-            {/* ✨Packages Section✨ */}
             <div className='packages-section'>
                 <h2>Available Packages</h2>
 
@@ -105,20 +128,37 @@ const RiderDashboard = () => {
                     <p>No packages available at the moment. </p>
                 ): (
                 <div className='packages-grid'>
-                    {packages.map((pkg) => (
+                    {packages.map((pkg) => {
+
+                        const booking = bookings.find(
+                            (b) => b.package && b.package._id === pkg._id && b.status !== 'expired'
+                        )
+
+                        return (
+                    
                         <div key={pkg._id} className='package-card'> 
                         <img src={pkg.imageUrl} alt={pkg.name} className='package-img' />
                         <h3>{pkg.name} </h3>
                         <p>{pkg.description}</p>
                         <p>Sessions: {pkg.sessionsPerMonth}</p>
                         <p>Price: {pkg.price} BD</p>
-                        <button onClick={() => handleBookPackage(pkg._id)}>Book Now</button>
+                        {booking ? (
+                            <button disabled>
+                                {booking.status === 'pending' ? 'Pending Approval' : 'Active'}
+                            </button>
+                        ): (
+
+                            <button onClick={() => handleBookPackage(pkg._id)}>Book Now</button>
+                        )}
                         </div>
-                    ))}
+                    ) })}
                 </div>
                 )}
+                <Footer/>
             </div>
+
         </div>  
+        
     </div>
 )
   
