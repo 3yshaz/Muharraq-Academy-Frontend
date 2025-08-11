@@ -1,4 +1,4 @@
-import '../Styles.css';
+import '../css/signup.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Footer from '../components/Footer'
@@ -55,7 +55,7 @@ const Signup = () => {
 
 
   return (
-    <div className="signup-container">
+    <div className="signup-page">
       <form className="signup-form" onSubmit={handleSubmit}>
         <h2>Create Account</h2>
 

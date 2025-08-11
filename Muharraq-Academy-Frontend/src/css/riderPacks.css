@@ -1,0 +1,87 @@
+.packages-page {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    background-color: #fff;
+    color: #3a1f24;
+    font-family: 'Arial', sans-serif;
+    min-height: 80vh;
+  }
+  
+  .booked-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #87383B;
+    margin-bottom: 2rem;
+  }
+  
+  .booked-packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+    padding-bottom: 3rem;
+  }
+  
+  .booked-package-card {
+    background-color: #fdf8f4;
+    border: 1.5px solid #B7905F;
+    border-radius: 14px;
+    padding: 1rem 1.2rem 1.5rem 1.2rem;
+    box-shadow: 0 6px 16px rgba(135, 56, 59, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .booked-package-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(135, 56, 59, 0.2);
+  }
+  
+  .booked-package-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #B7905F;
+    margin-bottom: 1rem;
+  }
+  
+  .booked-package-card h3 {
+    color: #87383B;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  
+  .booked-package-card p {
+    margin: 6px 0;
+    font-size: 1rem;
+    color: #3a1f24;
+    font-weight: 600;
+  }
+  
+  .status-style {
+    display: inline-block;
+    padding: 6px 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    color: white;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    user-select: none;
+  }
+  
+  .status-style.pending {
+    background-color: #941919; 
+  }
+  
+  .status-style.active {
+    background-color: #147c19;  
+  }
+  
+  .status-style.cancelled {
+    background-color: #555555; 
+  }
+  

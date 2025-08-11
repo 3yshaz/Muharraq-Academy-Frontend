@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import '../riderDashboard.css'
+import '../css/riderDashboard.css'
 import Footer from '../components/Footer'
 import axios from 'axios'
 
@@ -62,7 +62,7 @@ const RiderDashboard = () => {
 
 
         const hasBooked = bookings.some(
-            (booking) => booking.package && booking.package._id === packageId && booking.status !== 'expired'
+            (booking) => booking.package._id === packageId && booking.status !== 'expired'
         )
 
         if (hasBooked ) {
@@ -108,6 +108,7 @@ const RiderDashboard = () => {
                 <li onClick={() => navigate('/rider-attendance')}>Attendance</li>
                 <li onClick={() => navigate('/rider-horses')}>Assigned Horses</li>
                 <li onClick={() => navigate('/rider-package')}>My Package</li>
+                <li onClick={() => navigate('/about')}>About</li>
                 <li onClick={handleLogout} className='logout'>Logout</li>
             </ul>
             </div>
@@ -131,7 +132,7 @@ const RiderDashboard = () => {
                     {packages.map((pkg) => {
 
                         const booking = bookings.find(
-                            (b) => b.package && b.package._id === pkg._id && b.status !== 'expired'
+                            (b) => b.package._id === pkg._id && b.status !== 'expired'
                         )
 
                         return (

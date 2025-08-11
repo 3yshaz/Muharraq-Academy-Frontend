@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from "react"
 import axios from 'axios'
 import Footer from '../components/Footer'
+import '../css/riderPacks.css'
 
 
 
@@ -13,13 +14,11 @@ const RiderPackage = () => {
         const fetchBookedPackage = async () => {
             try {
                 const token = localStorage.getItem('token')
-                const user = JSON.parse(localStorage.getItem('user'))
-                if (!user) return
-                const userId = user._id
-                const response = await axios.get(`http://localhost:3000/api/packages/rider-package/${userId}`, {
+                if (!token) return
+                const response = await axios.get('http://localhost:3000/api/booking/my/booking', {
                     headers: { Authorization: `Bearer ${token}`}
                 })
-                console.log('packages:', response.data)
+                console.log('booking:', response.data)
                 setBookedPackages(response.data)
 
             } catch (error) {
@@ -36,13 +35,15 @@ const RiderPackage = () => {
           <p>You have not booked any packages yet.</p>
         ) : (
           <div className="booked-packages-grid">
-            {bookedPackages.map((pkg) => (
-              <div key={pkg._id} className="booked-package-card">
-                <img src={pkg.imageUrl} alt={pkg.name} className="booked-package-img" />
-                <h3>{pkg.name}</h3>
-                <p>{pkg.description}</p>
-                <p>Sessions: {pkg.sessionsPerMonth}</p>
-                <p>Price: {pkg.price} BD</p>
+            {bookedPackages.map((booking) => (
+              <div key={booking._id} className="booked-package-card">
+                <img src={booking.package.imageUrl} alt={booking.package.name} className="booked-package-img" />
+                <h3>{booking.package.name}</h3>
+                <p>Sessions: {booking.package.sessionsPerMonth}</p>
+                <p>Price: {booking.package.price} BD</p>
+                <span className={`status-style ${booking.status}`}> 
+                  {booking.status.toUpperCase()}
+                </span>
               </div>
             ))}
           </div>

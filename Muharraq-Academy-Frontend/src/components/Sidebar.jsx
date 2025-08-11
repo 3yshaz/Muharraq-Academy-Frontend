@@ -1,8 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import '../adminDashboard.css'
+import { Link, useNavigate } from 'react-router-dom';
+import '../css/adminDashboard.css'
 
 const AdminSidebar = () => {
+  const navigate = useNavigate()
+
+const handleLogout = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('role')
+    localStorage.removeItem('user')
+    navigate('/')
+}
+
 
   const links = [
     { to: '/admin/dashboard', label: 'Dashboard' },
@@ -25,6 +34,11 @@ const AdminSidebar = () => {
             <Link to={link.to}>{link.label}</Link>
           </li>
         ))}
+        <li>
+        <button onClick={handleLogout} className='logout-btn'>
+          Logout
+        </button>
+        </li>
       </ul>
      
       </div>

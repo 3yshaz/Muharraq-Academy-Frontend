@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from "react"
 import axios from "axios"
 import Footer from '../components/Footer'
+import '../css/adminAttendance.css';
+
 
 
 const AdminRiderAttendance = () =>{
@@ -57,7 +59,8 @@ const AdminRiderAttendance = () =>{
     }
 
     return (
-        <div className="page-container">
+        <div className="page">
+        <div className="attendance-container">
             <h2>Mark Rider Attendance</h2>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -91,7 +94,10 @@ const AdminRiderAttendance = () =>{
                 </div>
                 <button type='submit'> Mark Attendance</button>
             </form>
+            </div>
+
             <Footer />
+        
         </div>
     )
 }

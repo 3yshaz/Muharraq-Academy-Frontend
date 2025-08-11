@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import AdminSidebar from '../components/Sidebar';
-import '../adminDashboard.css';
+import '../css/adminDashboard.css';
 import Footer from '../components/Footer'
 
 
 const AdminDashboard = () => {
     const [user, setUser] = useState('')
+
 
     useEffect(() => {
         const user = localStorage.getItem('user')

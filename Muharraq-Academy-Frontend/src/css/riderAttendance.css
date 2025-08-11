@@ -1,0 +1,46 @@
+.page-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem 2.5rem;
+    background-color: #fff;
+    border: 1px solid #B7905F;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(135, 56, 59, 0.15);
+    color: #3a1f24;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .page-container h2 {
+    color: #87383B;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .page-container p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .page-container ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  
+  .page-container li {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .page-container li strong {
+    color: #87383B;
+  }
+  
+  .page-container li br {
+    margin-bottom: 4px;
+    display: block;
+  }
+  

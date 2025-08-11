@@ -1,0 +1,68 @@
+.page {
+  background-color: #fdf8f4;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  color: #3a1f24;
+}
+
+.attendance-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1.5px solid #B7905F;
+  border-radius: 16px;
+  padding: 30px 25px;
+  box-shadow: 0 6px 18px rgba(183, 144, 95, 0.15);
+}
+
+.attendance-container h2 {
+  text-align: center;
+  color: #87383B;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.attendance-container form > div {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.attendance-container label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #3a1f24;
+}
+
+.attendance-container select {
+  padding: 10px 12px;
+  border: 2px solid #B7905F;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.attendance-container select:focus {
+  border-color: #87383B;
+  box-shadow: 0 0 8px #B7905F88;
+}
+
+.attendance-container button {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #87383B;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(135, 56, 59, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.attendance-container button:hover {
+  background-color: #B7905F;
+}

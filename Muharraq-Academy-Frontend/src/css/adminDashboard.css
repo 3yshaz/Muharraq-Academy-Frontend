@@ -1,0 +1,89 @@
+.dashboard-container {
+    display: block; 
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+
+  }
+  
+  .dashboard-content {
+    margin-left: 250px; 
+    padding: 2rem;
+    background-color: #fff;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background-color: #B7905F;
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .admin-sidebar {
+    width: 200px;
+    height: 100vh;
+    border-radius: 8px;
+    background-color: #87383B;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sidebar-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-align: left;
+    letter-spacing: 1px;
+  }
+  
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .sidebar-links li {
+    margin-bottom: 0.8rem;
+    text-align: left;
+  }
+  
+  .sidebar-links a,
+  .logout-btn {
+    display: block;
+    width: 80%;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    background-color: #B7905F;
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar-links a:hover,
+  .logout-btn:hover {
+    background-color: #a67b4a;
+    transform: translateX(3px);
+  }
+

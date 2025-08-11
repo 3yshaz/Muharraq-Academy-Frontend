@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios'
+import '../css/booking.css'
 
 const AdminPendingBookings = () => {
     const [pending, setPending] = useState([])
@@ -21,7 +22,7 @@ const AdminPendingBookings = () => {
 
     const handleConfirm = async (bookingId) => {
         try {
-            await axios.patch(`http://localhost:3000/api/booking/${bookingId}/confirm`, {
+            await axios.put(`http://localhost:3000/api/booking/confirm/${bookingId}`, {}, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             })
             setPending(pending.filter(b => b._id !== bookingId))

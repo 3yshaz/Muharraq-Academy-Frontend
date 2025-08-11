@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from "react"
 import axios from 'axios'
+import '../css/riderAttendance.css'
 import Footer from '../components/Footer'
 
 
@@ -32,9 +33,8 @@ const RiderAttendance = () => {
 
                 const userData = userRes.data
 
-                const totalSessions = userData.package?.numberOfSessions || 0
-                const usedSessions = response.data.length
-                setSessionLeft(totalSessions - usedSessions)
+                const totalSessions = userData.selectedPackage?.sessionLeft || 0
+                setSessionLeft(totalSessions )
 
             } catch (error) {
                 console.error('Error fetching attendance record:', error)
@@ -51,8 +51,7 @@ const RiderAttendance = () => {
       <h2>Your Attendance</h2>
 
       {sessionLeft !== null && (
-        <p><strong>Sessions Left:</strong> {sessionLeft}</p>
-      )}
+        <p><strong>Sessions Left:</strong> {sessionLeft}</p>)}
       {attendance.length > 0 ? (
         <ul>
           {attendance.map((record, index) => (

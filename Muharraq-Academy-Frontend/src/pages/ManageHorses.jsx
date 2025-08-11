@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
 import axios from "axios"
-import '../adminDashboard.css';
+import '../css/manageHorses.css';
 import Footer from "../components/Footer";
 
 

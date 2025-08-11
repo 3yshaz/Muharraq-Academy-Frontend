@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom'
-import './Styles.css'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Dashboard from './pages/Dashboard'
@@ -13,6 +12,8 @@ import ManagePackages from './pages/ManagePackages'
 import AdminAttendance from './pages/AdminAttendance'
 import ManageHorses from './pages/ManageHorses'
 import ManageBooking from './pages/ManageBooking'
+import AboutPage from './pages/About'
+
 
 const App = () => {
   return ( 
@@ -31,6 +32,8 @@ const App = () => {
       <Route path= '/admin/manage-attendance' element={<AdminAttendance/>}/>
       <Route path= '/admin/manage-horses' element={<ManageHorses/>}/>
       <Route path= '/admin/manage-bookings' element={<ManageBooking/>}/>
+      <Route path= '/about' element={<AboutPage/>}/>
+
 
 
 

@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import '../Styles.css'
-import '../Footer.css'
+import '../css/login.css'
 import axios from 'axios' 
 import Footer from '../components/Footer'
 
@@ -10,7 +9,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  //
+  
 
 
   const handleLogin = async (e) => {
@@ -49,6 +48,7 @@ const Login = () => {
 }
 
   return (
+    <div className='login-page'>
     <div className="login-container">
 
         <div className='login-logo-container'>
@@ -78,7 +78,9 @@ const Login = () => {
           Don't have an account? <Link to="/signup">Sign up</Link>
         </p>
       </form>
+
       <Footer/>
+    </div>
     </div>
   );
 };
