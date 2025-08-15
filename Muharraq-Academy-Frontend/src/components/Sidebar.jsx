@@ -35,7 +35,7 @@ const handleLogout = () => {
           </li>
         ))}
         <li>
-          <button onClick={handleLogout} className='logout-btn'>
+          <button onClick={handleLogout} >
               Logout
           </button>
         </li>

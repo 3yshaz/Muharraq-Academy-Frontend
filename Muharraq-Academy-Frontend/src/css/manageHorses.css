@@ -1,9 +1,9 @@
 .manage-horse-page {
     min-height: 100vh;
-    background: #fff;
-    padding: 2rem 1rem 4rem;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #3a1f24;
+    background-color: #fdf8f4;
+    padding: 40px 20px;
   }
   
   .manage-horses-container {
@@ -78,17 +78,19 @@
   
   .horse-cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 0.6rem;
+    justify-items: center;
   }
   
   .horse-card {
     background-color: #fdfcfa;
-    border: 1px solid #B7905F;
+    border: 3px solid #B7905F;
     border-radius: 15px;
     box-shadow: 0 6px 14px rgba(183, 144, 95, 0.15);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 270px;
   }
   
   .horse-card:hover {

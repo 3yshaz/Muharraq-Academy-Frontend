@@ -13,7 +13,6 @@ const ManagePackages = () => {
     const [price, setPrice] = useState('')
     const [sessions, setSessions] = useState('')
     const [description, setDesecription] = useState('')
-    // const navigate = useNavigate()
     
     const token = localStorage.getItem('token')
 
@@ -115,6 +114,7 @@ const ManagePackages = () => {
     }
 
     return (
+      <div className='page'>
       <div className='managePack-container'>
         {view === 'manage' && (
         <>
@@ -136,12 +136,12 @@ const ManagePackages = () => {
             {packages.map(pkg => (
               <tr key={pkg._id}>
                 <td>{pkg.name}</td>
-                <td>{pkg.price}</td>
+                <td>{pkg.price}BD</td>
                 <td>{pkg.session}</td>
                 <td>{pkg.description}</td>
                 <td>
-                  <button onClick={() => handleEditClick(pkg)}>Edit</button>
-                  <button onClick={() => handleDelete(pkg._id)}>Delete</button>
+                  <button className='edit-btn' onClick={() => handleEditClick(pkg)}>Edit</button>
+                  <button className='delete-btn' onClick={() => handleDelete(pkg._id)}>Delete</button>
                 </td>
               </tr>
             ))}
@@ -174,6 +174,7 @@ const ManagePackages = () => {
           </>
         )}
         <Footer/>
+        </div>
         </div>
     )
 }

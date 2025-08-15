@@ -58,39 +58,36 @@
     text-align: left;
     letter-spacing: 1px;
   }
-  .logout-btn {
-    display: block;
-    width: 100%;
-    padding: 8px 10px;
-    margin-bottom: 6px;
-    background-color: #B7905F;
-    color: white;
-    text-decoration: none;
-    font-family: 'Montserrat', sand-serif;
-    font-size: 0.9rem;
-    border-radius: 1px;
-    transition: all 0.3s ease;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
   
-  .sidebar-links,
-  .logout-btn {
+  .sidebar-links {
     list-style: none;
     padding: 0;
     margin: 0;
     width: 100%;
   }
+
+  .sidebar-links button {
+    display: block !important;
+    width: 80% !important;
+    padding: 8px 10px !important;
+    margin-bottom: 6px !important;
+    background-color: #B7905F !important;
+    color: white !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 0.9rem !important;
+    border-radius: 6px !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    cursor: pointer !important;
+    text-align: left !important;
+  }
   
-  .sidebar-links li,
-  .logout-btn {
+  .sidebar-links li {
     margin-bottom: 0.8rem;
     text-align: left;
   }
   
-  .sidebar-links a,
-  .logout-btn {
+  .sidebar-links a {
     display: block;
     width: 80%;
     padding: 8px 10px;
@@ -105,9 +102,9 @@
   }
   
   .sidebar-links a:hover,
-  .logout-btn:hover {
-    background-color: #a67b4a;
-    transform: translateX(3px);
+  .sidebar-links button:hover {
+    background-color: #a67b4a !important;
+    transform: translateX(3px) !important;
   }
 
 

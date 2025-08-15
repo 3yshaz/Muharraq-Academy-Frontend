@@ -1,12 +1,59 @@
-# React + Vite
+Project Name: Muharraq Equestrian Academy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Description:
+Muharraq Equestrian Academy is a web-based application designed to streamline the management of a horse riding academy.
 
-Currently, two official plugins are available:
+The app allows administrators to efficiently manage:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-Riders
 
-## Expanding the ESLint configuration
+-Packages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-Bookings
+
+-Attendance
+
+-Horses
+
+-Trainers
+
+Riders can view and book packages, track booking status, and stay updated with academy information.
+
+This app was built to digitize academy operations, reduce administrative workload, and provide riders with an easy-to-use interface for managing their bookings and attendance.
+
+
+Deployed App:
+Back-end Repo: https://github.com/3yshaz/Muharraq-Academy-Backend.git 
+
+Planning Materials: Trello 
+https://trello.com/invite/b/6884b8ca4be73f055f36e370/ATTI6cb185b946dd7c7fcae17651740ac02b9288AF31/muharraq-equesterian-academy
+
+
+Technologies Used:
+
+Front-End: React, CSS (plain)
+
+Back-End: Node.js, Express.js
+
+Database: MongoDB
+
+Routing & Authentication: React Router, JWT
+
+HTTP Requests: Axios
+
+Attributions
+
+Fonts: Montserrat on Google Fonts
+
+
+Next Steps:
+
+-Enable real-time notifications for riders when bookings are confirmed.
+
+-Add a rating/review system for trainers and horses.
+
+-Enhance mobile responsiveness and UX.
+
+-Implement payment gateway integration for online package purchases.
+
+-Add filtering and search functionality for packages and horses.

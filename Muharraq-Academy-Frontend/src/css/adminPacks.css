@@ -1,8 +1,16 @@
+.page {
+  background-color: #fdf8f4;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #3a1f24;
+}
+
 .managePack-container {
     max-width: 900px;
     margin: 2rem auto;
     padding: 1rem 2rem;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #3a1f24;
   }
   
@@ -51,7 +59,7 @@
   .package-table td {
     padding: 12px 15px;
     text-align: left;
-    border-bottom: 1px solid #B7905F;
+    border-bottom: 1px solid #b7855f;
   }
   
   .package-table tbody tr:hover {
@@ -59,12 +67,24 @@
     cursor: pointer;
   }
   
-  .package-table button {
+  .edit-btn {
     background-color: #B7905F;
     color: white;
     border: none;
     border-radius: 10px;
-    padding: 6px 12px;
+    padding: 4px 8px;
+    margin-right: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .delete-btn {
+    background-color: #8c1d0e;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 2px 6px;
     margin-right: 6px;
     font-weight: 600;
     cursor: pointer;

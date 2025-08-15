@@ -1,9 +1,12 @@
 .dashboard-container {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 1rem 2rem;
-    font-family: 'Arial', sans-serif;
-    color: #3a1f24;
+  background-color: #fdf8f4;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #3a1f24;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   }
   
   .dashboard-container h1 {
@@ -14,8 +17,7 @@
   }
   
   .dashboard-container table {
-    width: 100%;
-    border-collapse: collapse;
+    width: 60%;    
     box-shadow: 0 6px 12px rgba(135, 56, 59, 0.15);
     border-radius: 12px;
     overflow: hidden;
@@ -34,7 +36,7 @@
   }
   
   .dashboard-container tbody tr:hover {
-    background-color: #f9f6f4;
+    background-color: #c3b39f;
     cursor: pointer;
   }
   

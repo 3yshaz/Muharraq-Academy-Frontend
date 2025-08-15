@@ -57,6 +57,8 @@ const ManageRiders = () => {
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Age</th>
+                    <th>Weight</th>
                     <th>Phone</th>
                     <th>Actions</th>
                 </tr>
@@ -66,7 +68,9 @@ const ManageRiders = () => {
                     <tr key={rider.userId}>
                         <td>{rider.name}</td>
                         <td>{rider.email}</td>
-                        <td>{rider.phone || '-'}</td>
+                        <td>{rider.age}</td>
+                        <td>{rider.weight}</td>
+                        <td>{rider.contactNumber || '-'}</td>
                         <td>
                             <button onClick={() => handleEdit(rider.userId)}>Edit</button>
                             <button onClick={() => handleDelete(rider.userId)} style ={{marginLeft:'8px', color:'red'}}>Delete</button>

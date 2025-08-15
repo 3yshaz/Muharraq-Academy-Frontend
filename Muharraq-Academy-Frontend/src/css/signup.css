@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+
     min-height: 100vh;
     background: linear-gradient(135deg, #87383B 40%, #B7905F 100%);
     padding: 2rem;
