@@ -16,13 +16,11 @@ const About = () => {
             <div>
                 <h1>About Muharraq Equestrian Academy</h1>
                 <p>
-                heeeeeellllllloooooo test test check 1 2 3 <br/>
-                jklk  <br/>
-                mlk <br/>
-                sfgdbf  <br/>
-                dfrv  <br/>
-                dfgsdsb <br/>
-
+                Muharraq Equestrian Academy, established in 2003 in the Muharraq Governorate, is one<br/>
+                of Bahrain’s leading centers for teaching and developing horseback riding skills. It is a<br/>
+                private institution accredited by the Bahrain Royal Equestrian and Endurance Federation,<br/>
+                offering a wide range of training programs including dressage, show jumping, endurance<br/>
+                racing, as well as equine-assisted therapy and courses in stable management.<br/>
                 </p>
             </div>
             <Footer/>

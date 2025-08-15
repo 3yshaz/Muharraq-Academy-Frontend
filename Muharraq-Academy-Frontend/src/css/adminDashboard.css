@@ -1,3 +1,4 @@
+
 .dashboard-container {
     display: block; 
     height: 100vh;
@@ -5,12 +6,16 @@
 
   }
   
-  .dashboard-content {
-    margin-left: 250px; 
-    padding: 2rem;
-    background-color: #fff;
-    min-height: 100vh;
-    box-sizing: border-box;
+  .dashboard-content h1{
+    margin: 0 0 0.5rem -30rem; 
+    padding: 0;
+    text-align: left;
+  }
+
+  .dashboard-content p {
+    margin: 2rem 2rem 30rem 2rem; 
+    padding: 0;
+    text-align: left;
   }
   
   .cards-container {
@@ -53,15 +58,33 @@
     text-align: left;
     letter-spacing: 1px;
   }
+  .logout-btn {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    background-color: #B7905F;
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sand-serif;
+    font-size: 0.9rem;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
   
-  .sidebar-links {
+  .sidebar-links,
+  .logout-btn {
     list-style: none;
     padding: 0;
     margin: 0;
     width: 100%;
   }
   
-  .sidebar-links li {
+  .sidebar-links li,
+  .logout-btn {
     margin-bottom: 0.8rem;
     text-align: left;
   }
@@ -85,5 +108,33 @@
   .logout-btn:hover {
     background-color: #a67b4a;
     transform: translateX(3px);
+  }
+
+
+  .academy-info {
+
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 1000;
+  }
+
+  .academy-logo {
+    width: 90px;
+    height: auto;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+  }
+
+  .academy-name {
+    margin-top:25px;
+    font-weight: 700;
+    color: #B7905F;
+    font-size: 0.7rem;
   }
 

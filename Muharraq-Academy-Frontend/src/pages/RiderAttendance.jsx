@@ -47,6 +47,7 @@ const RiderAttendance = () => {
 
 
     return (
+      <div className="full-page">
      <div className="page-container">
       <h2>Your Attendance</h2>
 
@@ -65,6 +66,7 @@ const RiderAttendance = () => {
         <p>No attendance records yet.</p>
       )}
       <Footer/>
+    </div>
     </div>
   )
 }

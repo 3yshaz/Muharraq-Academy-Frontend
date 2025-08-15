@@ -35,10 +35,11 @@ const handleLogout = () => {
           </li>
         ))}
         <li>
-        <button onClick={handleLogout} className='logout-btn'>
-          Logout
-        </button>
+          <button onClick={handleLogout} className='logout-btn'>
+              Logout
+          </button>
         </li>
+
       </ul>
      
       </div>

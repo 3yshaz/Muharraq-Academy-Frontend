@@ -13,6 +13,7 @@ import AdminAttendance from './pages/AdminAttendance'
 import ManageHorses from './pages/ManageHorses'
 import ManageBooking from './pages/ManageBooking'
 import AboutPage from './pages/About'
+import ManageRiders from './pages/ManageRider'
 
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
       <Route path= '/admin/manage-attendance' element={<AdminAttendance/>}/>
       <Route path= '/admin/manage-horses' element={<ManageHorses/>}/>
       <Route path= '/admin/manage-bookings' element={<ManageBooking/>}/>
+      <Route path= '/admin/manage-riders' element={<ManageRiders/>}/>
       <Route path= '/about' element={<AboutPage/>}/>
 
 

@@ -49,8 +49,6 @@ const ManageRiders = () => {
     }
 
     return (
-        <>
-        <AdminNavbar />
 
     <div className='dashboard-container'>
         <h1>Manage Riders</h1>
@@ -79,7 +77,7 @@ const ManageRiders = () => {
         </table>
         <Footer/>
     </div>
-    </>
+    
     )
 }
 

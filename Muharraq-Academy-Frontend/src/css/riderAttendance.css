@@ -1,3 +1,10 @@
+.full-page {
+  background-color: #fdf8f4;
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .page-container {
     max-width: 700px;
     margin: 2rem auto;
@@ -7,7 +14,6 @@
     border-radius: 16px;
     box-shadow: 0 6px 16px rgba(135, 56, 59, 0.15);
     color: #3a1f24;
-    font-family: 'Arial', sans-serif;
   }
   
   .page-container h2 {
