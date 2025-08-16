@@ -44,7 +44,7 @@ Deployed App:
 Back-end Repo: https://github.com/3yshaz/Muharraq-Academy-Backend.git 
 
 Planning Materials: Trello 
-https://trello.com/invite/b/6884b8ca4be73f055f36e370/ATTI6cb185b946dd7c7fcae17651740ac02b9288AF31/muharraq-equesterian-academy
+https://trello.com/b/Rz7r5k0C/muharraq-equesterian-academy
 
 
 Technologies Used:
