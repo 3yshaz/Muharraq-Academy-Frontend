@@ -22,7 +22,7 @@ const ManagePackages = () => {
 
         const fetchPackages = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/api/packages', {
+                const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/packages`, {
                     headers: { Authorization: `Bearer ${token}`}
                 })
 
@@ -47,7 +47,7 @@ const ManagePackages = () => {
         if (!window.confirm('Are you sure you want to delete this package?'))
             return 
         try {
-            await axios.delete(`http://localhost:3000/api/packages/${id}`, {
+            await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/packages/${id}`, {
 
                 headers: { Authorization: `Bearer ${token}`}
             })
@@ -76,7 +76,7 @@ const ManagePackages = () => {
     const handleAddSubmit = async (e) => {
       e.preventDefault()
       try {
-          await axios.post('http://localhost:3000/api/packages', {
+          await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/packages`, {
               title,
               price,
               sessions,
