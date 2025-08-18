@@ -88,7 +88,7 @@ const Signup = () => {
           Role:
           <select value={role} onChange={(e) => setRole(e.target.value)}>
             <option value="rider">Rider</option>
-            <option value="admin">Admin</option>
+            {/* <option value="admin">Admin</option> */}
           </select>
         </label>
 
