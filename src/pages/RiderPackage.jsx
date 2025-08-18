@@ -15,7 +15,7 @@ const RiderPackage = () => {
             try {
                 const token = localStorage.getItem('token')
                 if (!token) return
-                const response = await axios.get('http://localhost:3000/api/booking/my/booking', {
+                const response = await axios.get(`${import.meta.env.REACT_APP_BACKEND_URL}/api/booking/my/booking`, {
                     headers: { Authorization: `Bearer ${token}`}
                 })
                 console.log('booking:', response.data)

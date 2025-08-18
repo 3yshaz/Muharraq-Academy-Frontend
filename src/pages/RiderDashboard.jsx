@@ -33,7 +33,7 @@ const RiderDashboard = () => {
 
     const fetchPackages = async (token) => {
         try {
-            const response = await axios.get('http://localhost:3000/api/packages', {
+            const response = await axios.get(`${import.meta.env.REACT_APP_BACKEND_URL}/api/packages`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -47,7 +47,7 @@ const RiderDashboard = () => {
 
     const fetchUserBookings = async (token) => {
         try {
-            const response = await axios.get('http://localhost:3000/api/booking/my/booking', {
+            const response = await axios.get(`${import.meta.env.REACT_APP_BACKEND_URL}/api/booking/my/booking`, {
                 headers: {Authorization: `Bearer ${token}`}
             })
             setBookings(response.data)
@@ -75,7 +75,7 @@ const RiderDashboard = () => {
             const token = localStorage.getItem('token')
 
             await axios.post(
-                `http://localhost:3000/api/booking/book`,
+                `${import.meta.env.REACT_APP_BACKEND_URL}/api/booking/book`,
             { packageId },
             {headers: { Authorization: `Bearer ${token}`}}
             )
