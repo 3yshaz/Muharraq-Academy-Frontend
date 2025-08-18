@@ -39,7 +39,7 @@ const Signup = () => {
         ...(role === 'rider' && { age, weight, contactNumber}),
     }
 
-    const res = await axios.post('http://localhost:3000/api/auth/signup', requestDate)
+    const res = await axios.post(`${import.meta.env.REACT_APP_BACKEND_URL}/api/auth/signup`, requestDate)
 
     setSuccess(res.data.message)
 
