@@ -22,12 +22,12 @@ const RiderAttendance = () => {
                   return
                 }
 
-                const response = await axios.get(`/api/attendance/rider/${userId}`, {
+                const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/attendance/rider/${userId}`, {
                     headers: { Authorization: `Bearer ${token}`}
                 })
                 setAttendance(response.data)
 
-                const userRes = await axios.get(`/api/users/${userId}`, {
+                const userRes = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/users/${userId}`, {
                   headers: { Authorization: `Bearer ${token}`}
                 })
 

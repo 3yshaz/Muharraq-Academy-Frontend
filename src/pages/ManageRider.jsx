@@ -15,7 +15,7 @@ const ManageRiders = () => {
     useEffect(() => {
         const fetchRiders = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/auth', {
+            const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/auth`, {
                 headers: { Authorization: `Bearer ${token}`}
 
             })
@@ -33,7 +33,7 @@ const ManageRiders = () => {
         if (!window.confirm('Are you sure you want to delete this rider?'))
             return 
         try {
-            await axios.delete(`http://localhost:3000/api/users/${id}`, {
+            await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/users/${id}`, {
                 headers: { Authorization: `Bearer ${token}`}
             })
 
@@ -45,7 +45,7 @@ const ManageRiders = () => {
     }
 
     const handleEdit = (id) => {
-        navigate(`/admin/riders/edit/${id}`)
+        navigate(`${import.meta.env.VITE_BACKEND_URL}/admin/riders/edit/${id}`)
     }
 
     return (

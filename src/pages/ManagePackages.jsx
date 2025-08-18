@@ -97,7 +97,7 @@ const ManagePackages = () => {
     const handleEditSubmit = async (e) => {
       e.preventDefault()
       try {
-          await axios.put(`http://localhost:3000/api/packages/${selectedPackage._id}`,{
+          await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/packages/${selectedPackage._id}`,{
               title,
               price,
               sessions,

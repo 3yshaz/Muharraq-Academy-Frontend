@@ -17,10 +17,10 @@ const AdminRiderAttendance = () =>{
             try {
                 const token = localStorage.getItem('token')
 
-                const ridersResponse = await axios.get('/api/auth/riders', {
+                const ridersResponse = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/auth/riders`, {
                     headers: { Authorization: `Bearer ${token}`}
                 })
-                const horsesResponse = await axios.get('/api/horse', {
+                const horsesResponse = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/horse`, {
                     headers: { Authorization: `Bearer ${token}`}
                 })
 

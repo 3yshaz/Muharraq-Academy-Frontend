@@ -23,7 +23,7 @@ const ManageHorses = () => {
 
     const fetchHorses = async () => {
         try {
-            const response = await axios.get('/api/horse', {
+            const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/horse`, {
                 headers: {Authorization: `Bearer ${token}`}
             })
             console.log('Fetched horses:', response.data)
@@ -71,7 +71,7 @@ const handleSubmit = async (e) => {
 
 const handleDelete = async (id) => {
     try {
-        await axios.delete(`/api/horse/${id}`, {
+        await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/api/horse/${id}`, {
             headers: {Authorization: `Bearer ${token}`}
         })
         setHorses(horses.filter((h) => h._id !== id))
@@ -100,7 +100,7 @@ return (
             {horses.map((horse) => (
                 <div key={horse._id} className="horse-card">
                     <img 
-                    src={`http://localhost:3000/images/${horse.image || 'default-horse.jpg'}`}
+                    src={`${import.meta.env.VITE_BACKEND_URL}/images/${horse.image || 'default-horse.jpg'}`}
                     alt={horse.name}
                     className="horse-image"
                     />

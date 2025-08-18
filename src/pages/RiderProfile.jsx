@@ -13,7 +13,7 @@ const RiderProfile = () => {
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const response = await axios.get('/api/auth/profile/me', {
+                const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/auth/profile/me`, {
                     headers: { Authorization: `Bearer ${localStorage.getItem('token')}`}
                 })
                 console.log("rider data:", response.data)
@@ -38,7 +38,7 @@ const RiderProfile = () => {
         
         try {
             setUploading(true)
-            const response = await axios.put('/api/auth/profile/image', formData, {
+            const response = await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/auth/profile/image`, formData, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}`,
             'Content-Type': 'multipart/form-data'}
             })
@@ -64,7 +64,7 @@ const RiderProfile = () => {
 
             <div className="profile-card">
                 <div className="profile-img-wrapper">
-                    <img src={user.profileImage ? `http://localhost:3000/images/${user.profileImage}` : defaultUser} alt="profile" className="profile-img" />
+                    <img src={user.profileImage ? `${import.meta.env.VITE_BACKEND_URL}/images/${user.profileImage}` : defaultUser} alt="profile" className="profile-img" />
                 </div>
 
                 <input type="file" id='uploadInput' accept="image/*" onChange={handleImageUpload} style={{display: 'none'}} />
