@@ -10,7 +10,7 @@ const Dashboard = ({ user }) => {
     const fetchData = async () => {
         try {
             const token = localStorage.getItem('token')
-            const res = await axios.get(`${import.meta.env.REACT_APP_BACKEND_URL}/api/${user.role}/dashboard`, {
+            const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/${user.role}/dashboard`, {
                 headers: {
                     Authorization: `Berarer ${token}`
                 }

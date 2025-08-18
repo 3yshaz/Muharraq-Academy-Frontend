@@ -11,7 +11,7 @@ const AdminPendingBookings = () => {
         
     const fetchPendingBookings = async () => {
             try {
-            const res = await axios.get(`${import.meta.env.REACT_APP_BACKEND_URL}/api/booking/pending`, {
+            const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/booking/pending`, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}`}
             })
             setPending(res.data)
@@ -22,7 +22,7 @@ const AdminPendingBookings = () => {
 
     const handleConfirm = async (bookingId) => {
         try {
-            await axios.put(`${import.meta.env.REACT_APP_BACKEND_URL}/api/booking/confirm/${bookingId}`, {}, {
+            await axios.put(`${import.meta.env.VITE_BACKEND_URL}/api/booking/confirm/${bookingId}`, {}, {
                 headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
             })
             setPending(pending.filter(b => b._id !== bookingId))

@@ -46,7 +46,7 @@ const AdminRiderAttendance = () =>{
         try {
             const token = localStorage.getItem('token')
 
-            const response = await axios.post(`${import.meta.env.REACT_APP_BACKEND_URL}/api/attendance`, {
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/attendance`, {
                 riderId: selectedRider,
                 horseId: selectedHorse
             }, { headers: {Authorization: `Bearer ${token}`}})
