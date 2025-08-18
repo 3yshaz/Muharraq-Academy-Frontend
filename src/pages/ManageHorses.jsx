@@ -33,7 +33,6 @@ const ManageHorses = () => {
 
         } catch (error) {
             console.error('Failed to fetch horses', error)
-            // alert('Failed to load horses')
         }
     }
 

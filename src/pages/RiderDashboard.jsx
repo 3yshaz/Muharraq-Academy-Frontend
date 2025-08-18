@@ -73,7 +73,6 @@ const RiderDashboard = () => {
         try {
            
             const token = localStorage.getItem('token')
-            // const user = JSON.parse(localStorage.getItem('user'))
 
             await axios.post(
                 `http://localhost:3000/api/booking/book`,
@@ -82,7 +81,6 @@ const RiderDashboard = () => {
             )
             alert('Package booked successfully!')
             fetchUserBookings(userData._id, token)
-            // navigate('/rider-package', { state: { packageId}})
         } catch (error) {
             console.error('Booking failed:', error.response?.data || error.message)
             alert('Failed to book package')

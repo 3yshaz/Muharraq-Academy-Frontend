@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
 import axios from 'axios' 
 
 
@@ -39,16 +38,16 @@ return (
           {/* Admin-specific content */}
           <p>Total Riders: {data.totalRiders}</p>
           <p>Recent Registrations: {data.recentRegistrations}</p>
-          {/* Add more admin features here */}
+          {/*  more admin features */}
         </div>
       ) : (
         <div className="rider-section">
           <h4>Rider Dashboard</h4>
-          {/* Rider-specific content */}
+          {/*  content */}
           <p>Age: {data.age}</p>
           <p>Weight: {data.weight}</p>
           <p>Upcoming Sessions: {data.sessions?.length}</p>
-          {/* Add more rider features here */}
+          {/*  more rider  */}
         </div>
       )}
     </div>
