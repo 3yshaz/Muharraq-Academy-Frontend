@@ -15,6 +15,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError('')
+    console.log('backend url:', import.meta.env.VITE_BACKEND_URL);
     console.log({ email, password})
 
     try {
@@ -23,12 +24,15 @@ const Login = () => {
         password: password,
       })
 
+      console.log('login response:', response.data)
+
       const { token, role, user } = response.data
 
 
       localStorage.setItem('token', token)
       localStorage.setItem('role', role);
       localStorage.setItem('user', JSON.stringify(user))
+      
 
 
       if (role === 'admin') {
@@ -38,6 +42,12 @@ const Login = () => {
       } else {
         navigate('/dashboard');
       }
+
+      if (!role) {
+        setError("Role not provided by backend");
+        return;
+      }
+      
     
 } catch (err)  {
         console.error(err.response?.data || err.message)
