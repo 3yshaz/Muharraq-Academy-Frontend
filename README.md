@@ -40,7 +40,7 @@ Riders can view and book packages, track booking status, and stay updated with a
 This app was built to digitize academy operations, reduce administrative workload, and provide riders with an easy-to-use interface for managing their bookings and attendance.
 
 
-Deployed App:
+Deployed App: https://muharraq-academy-frontend.onrender.com/
 Back-end Repo: https://github.com/3yshaz/Muharraq-Academy-Backend.git 
 
 Planning Materials: Trello 
