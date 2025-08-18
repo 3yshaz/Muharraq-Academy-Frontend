@@ -1,77 +1,53 @@
+Rider-Dashboard
+<img width="1052" height="616" alt="Screenshot 2025-08-16 at 2 55 53 am" src="https://github.com/user-attachments/assets/a78e82dd-da1d-4c2c-8435-8d40c81fb4a8" />
+<img width="1348" height="637" alt="Screenshot 2025-08-19 at 12 40 19 am" src="https://github.com/user-attachments/assets/be19e009-08b9-42a8-9a1b-b05682697920" />
+<img width="1048" height="580" alt="Screenshot 2025-08-19 at 12 41 34 am" src="https://github.com/user-attachments/assets/f09fe46f-0449-4cd1-98be-0f796319c158" />
+<img width="947" height="642" alt="Screenshot 2025-08-19 at 12 42 42 am" src="https://github.com/user-attachments/assets/32f2d1cc-9fe2-4163-8751-603ed5e2a80d" />
 
-![alt text](https://file%2B.vscode-resource.vscode-cdn.net/Users/son16121724/Desktop/Screenshot%202025-08-16%20at%202.55.53%20am.png?version%3D1755302187901)
-
-
-![alt text](https://file%2B.vscode-resource.vscode-cdn.net/var/folders/f_/72r0gyvn3ks3b5v7gldr6jg00000gp/T/TemporaryItems/NSIRD_screencaptureui_aFhfvA/Screenshot%202025-08-16%20at%202.57.13%20am.png?version%3D1755302251600)
-
-
-![alt text](https://file%2B.vscode-resource.vscode-cdn.net/var/folders/f_/72r0gyvn3ks3b5v7gldr6jg00000gp/T/TemporaryItems/NSIRD_screencaptureui_MgkKKE/Screenshot%202025-08-16%20at%202.58.11%20am.png?version%3D1755302301528)
-
-![alt text](https://file%2B.vscode-resource.vscode-cdn.net/var/folders/f_/72r0gyvn3ks3b5v7gldr6jg00000gp/T/TemporaryItems/NSIRD_screencaptureui_to8CmI/Screenshot%202025-08-16%20at%202.59.02%20am.png?version%3D1755302345549)
-
-![alt text](https://file%2B.vscode-resource.vscode-cdn.net/var/folders/f_/72r0gyvn3ks3b5v7gldr6jg00000gp/T/TemporaryItems/NSIRD_screencaptureui_z1dwVa/Screenshot%202025-08-16%20at%202.59.37%20am.png?version%3D1755302381187)
-
-![alt text](https://file%2B.vscode-resource.vscode-cdn.net/var/folders/f_/72r0gyvn3ks3b5v7gldr6jg00000gp/T/TemporaryItems/NSIRD_screencaptureui_0QgYUe/Screenshot%202025-08-16%20at%203.00.16%20am.png?version%3D1755302419197)
-
-![alt text](https://file%2B.vscode-resource.vscode-cdn.net/var/folders/f_/72r0gyvn3ks3b5v7gldr6jg00000gp/T/TemporaryItems/NSIRD_screencaptureui_WSfD7X/Screenshot%202025-08-16%20at%203.01.15%20am.png?version%3D1755302478575)
+Admin-Dashboard
+<img width="947" height="561" alt="Screenshot 2025-08-19 at 12 43 28 am" src="https://github.com/user-attachments/assets/e1223be7-69a0-4e45-b311-76c22bfc3ecf" />
+<img width="947" height="561" alt="Screenshot 2025-08-19 at 12 47 45 am" src="https://github.com/user-attachments/assets/f9261d2b-06ed-4440-a2df-a5c1658c8d46" />
+<img width="947" height="561" alt="Screenshot 2025-08-19 at 12 48 06 am" src="https://github.com/user-attachments/assets/1670a24b-e85a-4b92-90ad-ccadc0482178" />
+<img width="947" height="642" alt="Screenshot 2025-08-19 at 12 49 02 am" src="https://github.com/user-attachments/assets/8048f75f-d99a-4ec2-8066-76dc86652825" />
 
 
-Project Name: Muharraq Equestrian Academy
 
-Description:
-Muharraq Equestrian Academy is a web-based application designed to streamline the management of a horse riding academy.
+# Project Name: Muharraq Equestrian Academy
 
-The app allows administrators to efficiently manage:
+📌 Overview
 
--Riders
+Muharraq Equestrian Academy is a full-stack web application that helps manage the daily operations of a horse riding academy.
+It provides two roles:
 
--Packages
+* **Admin** → manage riders, packages, bookings, attendance, horses, and trainers.
+* **Rider** → book packages, view status of bookings (pending/confirmed), and track updates.
 
--Bookings
+The goal of this app is to simplify academy management, reduce manual workload in excel, and create a smooth experience for both admins and riders.
 
--Attendance
+## 🚀 Getting Started
 
--Horses
-
--Trainers
-
-Riders can view and book packages, track booking status, and stay updated with academy information.
-
-This app was built to digitize academy operations, reduce administrative workload, and provide riders with an easy-to-use interface for managing their bookings and attendance.
+* **Live App:** https://muharraq-academy-frontend.onrender.com
+* **Back-end Repo:** https://github.com/3yshaz/Muharraq-Academy-Backend.git
+* **Planning Docs:** https://trello.com/b/Rz7r5k0C/muharraq-equesterian-academy
 
 
-Deployed App: https://muharraq-academy-frontend.onrender.com/
-Back-end Repo: https://github.com/3yshaz/Muharraq-Academy-Backend.git 
+## 🛠️ Technologies
 
-Planning Materials: Trello 
-https://trello.com/b/Rz7r5k0C/muharraq-equesterian-academy
+* Frontend: React, CSS
+* Backend: Node.js, Express.js
+* Database: MongoDB
+* Authentication: JWT
+* Routing: React Router
+* HTTP Requests: Axios
 
+## 🙌 Attributions
 
-Technologies Used:
+* Fonts: [Montserrat – Google Fonts](https://fonts.google.com/specimen/Montserrat)
 
-Front-End: React, CSS (plain)
+## 🔮 Next Steps
 
-Back-End: Node.js, Express.js
-
-Database: MongoDB
-
-Routing & Authentication: React Router, JWT
-
-HTTP Requests: Axios
-
-Attributions
-
-Fonts: Montserrat on Google Fonts
-
-
-Next Steps:
-
--Enable real-time notifications for riders when bookings are confirmed.
-
--Add a rating/review system for trainers and horses.
-
--Enhance mobile responsiveness and UX.
-
--Implement payment gateway integration for online package purchases.
-
--Add filtering and search functionality for packages and horses.
+* Add online payments for packages.
+* Real-time notifications when bookings are confirmed.
+* Reviews & ratings for horses and trainers.
+* Improved mobile responsiveness.
+* Search and filtering for packages and riders.
